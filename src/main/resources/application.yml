@@ -1,7 +1,23 @@
 server:
-  port: 9099
+  port: 10998
   address: /shading
 
 spring:
-  datasource:
-    driver-class-name:
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/springcloud_db01
+#    username: root
+#    password: 123456789QQ
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    open-in-view: false
+
+sharding:
+  jdbc:
+    datasource:
+      names: db01,db02
+      db01:
+
